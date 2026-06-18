@@ -23,7 +23,7 @@ jobs:
       - name: Update Deployment Image
         run: |
           kubectl set image deployment/web \
-          myapp=${{ secrets.DOCKER_USERNAME }}/test:${{ github.sha }}
+          web=${{ secrets.DOCKER_USERNAME }}/test:${{ github.sha }}
       - name: Verify Deployment
         run: |
           kubectl rollout status deployment/web
