@@ -22,7 +22,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/test:${{ github.sha }}
       - name: Update Deployment Image
         run: |
-          kubectl set image deployment/myapp \
+          kubectl set image deployment/web \
           myapp=${{ secrets.DOCKER_USERNAME }}/test:${{ github.sha }}
       - name: Verify Deployment
         run: |
